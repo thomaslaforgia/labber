@@ -12,9 +12,9 @@ class GithubApi < ActiveRestClient::Base
   def self.check_for_new
     self.latest_repos.items.each do |r|
       if not Repo.exists?(r.id)
-        Repo.create(id: r.id, url: r.url)
-        puts r.url
+        Repo.create(id: r.id, url: r.html_url)
       end
     end
   end
+
 end

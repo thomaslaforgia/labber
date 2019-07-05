@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Github API
 gem 'active_rest_client'
+
+# Slack API
+gem 'slack-ruby-client'

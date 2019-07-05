@@ -46,4 +46,5 @@ Rails.application.configure do
 
   # ActiveRestClient base
   config.api_server_url = "https://api.github.com"
+
 end

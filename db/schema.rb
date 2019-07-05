@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_220513) do
+ActiveRecord::Schema.define(version: 2019_07_05_222742) do
 
   create_table "github_apis", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2019_07_05_220513) do
   create_table "repos", force: :cascade do |t|
     t.string "url"
     t.boolean "reported"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slack_clients", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
