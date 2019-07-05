@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+GithubApi.latest_repos.items.each do |r|
+  # Set reported: true to avoid message flood
+  Repo.create(id: r.id, url: r.html_url, reported: true)
+end
