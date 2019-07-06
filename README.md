@@ -1,24 +1,26 @@
-# README
+# LABBER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Scans for new/updated GitHub repositories and posts them to Slack.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+- Clone this repo
+- Set environment variables:
 
-* System dependencies
+   `SLACK_API_TOKEN` Your bot token (create a bot [here](https://my.slack.com/services/new/bot))
 
-* Configuration
+   `SLACK_CHANNEL` Where to send reports (can be user ID, channel ID, etc.)
 
-* Database creation
+   `MONITORED_GITHUB_REPO` Search term to monitor (implementation still very crude!)
 
-* Database initialization
+- `bundle install && rake db:migrate && rake db:setup`
 
-* How to run the test suite
+## Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+- `rake new_repos`
 
-* Deployment instructions
+  Grabs new results and writes to DB
 
-* ...
+- `rake post_repos`
+
+  Reports new results to Slack
