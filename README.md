@@ -4,7 +4,6 @@ Scans for new/updated GitHub repositories and posts them to Slack.
 
 ## Getting started
 
-- Clone this repo
 - Set environment variables:
 
    `SLACK_API_TOKEN` Your bot token (create a bot [here](https://my.slack.com/services/new/bot))
