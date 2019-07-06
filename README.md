@@ -22,4 +22,4 @@ Scans for new/updated GitHub repositories and posts them to Slack.
 
 - `rake post_repos`
 
-  Reports new results to Slack
+  Posts new results to Slack channel
