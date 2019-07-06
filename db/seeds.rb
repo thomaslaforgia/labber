@@ -8,5 +8,5 @@
 
 GithubApi.latest_repos.items.each do |r|
   # Set reported: true to avoid message flood
-  Repo.create(id: r.id, url: r.html_url, reported: true)
+  Repo.create(id: r.id, url: r.html_url, updated_at: r.updated_at, reported: true)
 end

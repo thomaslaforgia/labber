@@ -10,7 +10,7 @@ Scans for new/updated GitHub repositories and posts them to Slack.
 
    `SLACK_CHANNEL` Where to send reports (can be user ID, channel ID, etc.)
 
-   `MONITORED_GITHUB_REPO` Search term to monitor (implementation still very crude!)
+   `MONITORED_GITHUB_REPO` Search term to monitor (implemented crudely)
 
 - `bundle install && rake db:migrate && rake db:setup`
 

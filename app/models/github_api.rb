@@ -4,15 +4,20 @@ class GithubApi < ActiveRestClient::Base
   get :repo_search, "/search/repositories"
 
   @monitored_repo = ENV['MONITORED_GITHUB_REPO']
+  @default_params = {'q': @monitored_repo, 'sort': 'updated', 'per_page': 50}
 
-  def self.latest_repos
-    self.repo_search(q: @monitored_repo, sort: "updated")
+  before_request do |name, request|
+    request.get_params = @default_params.merge(request.get_params)
+  end
+
+  def self.latest_repos(params={})
+    self.repo_search(params)
   end
 
   def self.check_for_new
     self.latest_repos.items.each do |r|
       if not Repo.exists?(r.id)
-        Repo.create(id: r.id, url: r.html_url, reported: false)
+        Repo.create(id: r.id, url: r.html_url, updated_at: r.updated_at, reported: false)
       end
     end
   end
